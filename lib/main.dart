@@ -27,6 +27,7 @@ class MainApp extends StatelessWidget {
       ensureScreenSize: true,
       builder: (context, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primaryColor: const Color(0xff202020),
             elevatedButtonTheme: ElevatedButtonThemeData(

@@ -79,14 +79,19 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                         },
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(156.w, 50.h),
-                          backgroundColor: viewModel.currentPage == 2
+                          backgroundColor: viewModel.currentPage ==
+                                  viewModel.onboardingData.length - 1
                               ? const Color(0xFFB57510)
                               : const Color(0xFF282828),
                           side: BorderSide(
-                            color: viewModel.currentPage == 2
+                            color: viewModel.currentPage ==
+                                    viewModel.onboardingData.length - 1
                                 ? const Color(0xFFB57510)
                                 : const Color(0xFF2E3336),
-                            width: 1,
+                            width: viewModel.currentPage ==
+                                    viewModel.onboardingData.length - 1
+                                ? 0
+                                : 1,
                           ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6.r),

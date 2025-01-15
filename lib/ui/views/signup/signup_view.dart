@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import 'login_viewmodel.dart';
+import 'signup_viewmodel.dart';
 
-class LoginView extends StackedView<LoginViewModel> {
-  const LoginView({Key? key}) : super(key: key);
+class SignupView extends StackedView<SignupViewModel> {
+  const SignupView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    LoginViewModel viewModel,
+    SignupViewModel viewModel,
     Widget? child,
   ) {
     return Scaffold(
-     
+
       body: Container(
         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
       ),
@@ -21,8 +21,8 @@ class LoginView extends StackedView<LoginViewModel> {
   }
 
   @override
-  LoginViewModel viewModelBuilder(
+  SignupViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      LoginViewModel();
+      SignupViewModel();
 }

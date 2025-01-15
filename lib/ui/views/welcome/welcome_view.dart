@@ -44,7 +44,9 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
                   ),
                   verticalSpaceMedium,
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        viewModel.nagativateToLogin();
+                      },
                       child: Text(
                         "Login",
                         style: TextStyle(
@@ -66,7 +68,9 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
                       )),
                   verticalSpace(30.h),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        viewModel.nagativateToSignup();
+                      },
                       child: Text(
                         "Open an account",
                         style: TextStyle(
