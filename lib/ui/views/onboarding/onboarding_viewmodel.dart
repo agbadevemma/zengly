@@ -29,7 +29,7 @@ class OnboardingViewModel extends BaseViewModel {
     }
   }
 
-  dynamic get finishOnboarding => _navigationService.replaceWithWelcomeView();
+  dynamic get finishOnboarding => _navigationService.navigateToWelcomeView();
 
   @override
   void dispose() {
