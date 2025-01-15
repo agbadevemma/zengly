@@ -38,14 +38,21 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
                 children: [
                   Text(
                     "Your Money, Your Freedom, Your Zengly.",
-                    style:
-                        TextStyle(fontSize: 14.5.sp, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                        fontSize: 14.5.sp, fontWeight: FontWeight.w600),
                     textAlign: TextAlign.center,
                   ),
                   verticalSpaceMedium,
                   ElevatedButton(
                       onPressed: () {},
-                      child: Text("Login"),
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14.5.sp,
+                            fontWeight: FontWeight.w600),
+                        textAlign: TextAlign.center,
+                      ),
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(double.infinity, 50.h),
                         backgroundColor: const Color(0xFFB57510),

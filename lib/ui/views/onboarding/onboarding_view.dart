@@ -15,7 +15,7 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
   ) {
     return Scaffold(
       body: Container(
-        padding:const EdgeInsets.only(left: 15.0, right: 15.0),
+        padding: const EdgeInsets.only(left: 15.0, right: 15.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -92,7 +92,14 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                             borderRadius: BorderRadius.circular(6.r),
                           ),
                         ),
-                        child: const Text("Next"),
+                        child: Text(
+                          "Next",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14.5.sp,
+                              fontWeight: FontWeight.w600),
+                          textAlign: TextAlign.center,
+                        ),
                       )
                     ],
                   )
