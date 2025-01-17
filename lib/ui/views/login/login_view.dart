@@ -186,6 +186,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                                     print("cool");
                                   }
                                 },
+                                // ignore: sort_child_properties_last
                                 child: Text(
                                   "Login",
                                   style: TextStyle(
