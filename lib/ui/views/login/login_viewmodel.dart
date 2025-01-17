@@ -20,6 +20,10 @@ class LoginViewModel extends FormViewModel {
     rebuildUi();
   }
 
+  void routeBack() {
+    _navigationService.back();
+  }
+
   void routeToSignup() {
     _navigationService.navigateToSignupView();
   }
@@ -51,6 +55,9 @@ class LoginValidators {
     if (value == null) {
       return null;
     }
+    if (value.isEmpty) {
+      return 'Email is required.';
+    }
 
     // Regular expression for validating email
     final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
@@ -65,6 +72,9 @@ class LoginValidators {
   static String? validatePassword(String? value) {
     if (value == null) {
       return null;
+    }
+    if (value.isEmpty) {
+      return 'Password is required.';
     }
 
     return null;

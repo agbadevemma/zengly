@@ -25,6 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!-- Biometric permissions for fingerprint and Face ID -->
+        <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+        <uses-permission android:name="android.permission.FINGERPRINT"/>
+        
+        <!-- Define biometric feature -->
+        <uses-feature android:name="android.hardware.biometrics" android:required="true"/>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

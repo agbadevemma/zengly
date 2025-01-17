@@ -47,7 +47,7 @@ class MainApp extends StatelessWidget {
               displayColor: Colors.white,
             ),
           ),
-          initialRoute: Routes.loginView,
+          initialRoute: Routes.onboardingView,
           onGenerateRoute: StackedRouter().onGenerateRoute,
           navigatorKey: StackedService.navigatorKey,
           navigatorObservers: [

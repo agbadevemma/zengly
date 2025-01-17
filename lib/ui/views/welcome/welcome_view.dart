@@ -22,8 +22,8 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
-        color: Colors.black.withOpacity(0.1), // 10% opacity
-              colorBlendMode: BlendMode.darken,
+            color: Colors.black.withOpacity(0.6), // 10% opacity
+            colorBlendMode: BlendMode.darken,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 15.0, right: 15.0),
