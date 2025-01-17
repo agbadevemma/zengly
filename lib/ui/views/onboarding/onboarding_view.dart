@@ -69,10 +69,10 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
                           if (viewModel.currentPage ==
                               viewModel.onboardingData.length - 1) {
-                            viewModel.finishOnboarding();
+                            await viewModel.finishOnboarding();
                           } else {
                             viewModel.nextPage();
                           }

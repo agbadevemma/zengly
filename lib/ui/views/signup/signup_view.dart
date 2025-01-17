@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
 import 'signup_viewmodel.dart';
 
 class SignupView extends StackedView<SignupViewModel> {
@@ -13,7 +12,6 @@ class SignupView extends StackedView<SignupViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-
       body: Container(
         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
       ),
