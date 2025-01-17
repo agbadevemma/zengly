@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zengly/ui/common/ui_helpers.dart';
 import 'login_viewmodel.dart';
 import 'login_view.form.dart';
+import 'dart:io';
 
 @FormView(fields: [
   FormTextField(
@@ -81,8 +82,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(8.r)),
                               border: Border.all(
-                                  width: 1.dm,
-                                  color: const Color(0XFF2E3336))),
+                                  width: 1.dm, color: const Color(0XFF2E3336))),
                           child: TextFormField(
                             controller: emailController,
                             autovalidateMode:
@@ -127,8 +127,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(8.r)),
                               border: Border.all(
-                                  width: 1.dm,
-                                  color: const Color(0XFF2E3336))),
+                                  width: 1.dm, color: const Color(0XFF2E3336))),
                           child: TextFormField(
                             controller: passwordController,
                             obscureText: viewModel.isPasswordVisible,
@@ -183,7 +182,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                             ElevatedButton(
                                 onPressed: () {
                                   viewModel.viewError();
-                                  if(viewModel.hasAnyValidationMessage){
+                                  if (!viewModel.hasAnyValidationMessage) {
                                     print("cool");
                                   }
                                 },
@@ -211,10 +210,13 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                             ),
                             horizontalSpaceTiny,
                             ElevatedButton(
-                              onPressed: viewModel.showBottomSheet,
+                              onPressed: () {
+                                // viewModel.showBottomSheet();
+                                viewModel.authenticate();
+                              },
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(
-                                    0XFF1C1A1A), // Background color
+                                backgroundColor:
+                                    const Color(0XFF1C1A1A), // Background color
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(
                                       6), // Rounded corners

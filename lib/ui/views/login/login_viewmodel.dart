@@ -1,18 +1,37 @@
+import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:zengly/app/app.bottomsheets.dart';
 import 'package:zengly/app/app.locator.dart';
 import 'package:zengly/app/app.router.dart';
-import 'package:flutter/material.dart';
-import 'package:zengly/ui/common/app_colors.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:zengly/ui/common/app_strings.dart';
-import 'package:zengly/ui/common/ui_helpers.dart';
-import 'package:stacked/stacked.dart';
-import 'package:stacked_services/stacked_services.dart';
 
 class LoginViewModel extends FormViewModel {
   final _navigationService = locator<NavigationService>();
   final _bottomSheetService = locator<BottomSheetService>();
+  final LocalAuthentication _localAuth = LocalAuthentication();
+  String _authorized = "Not Authorized";
+  String get authorized => _authorized;
+
+  Future<void> authenticate() async {
+    bool isAuthenticated = false;
+    try {
+      isAuthenticated = await _localAuth.authenticate(
+        localizedReason: 'Please authenticate to proceed',
+        options: const AuthenticationOptions(
+          useErrorDialogs: true,
+          stickyAuth: true,
+        ),
+      );
+      print(isAuthenticated);
+    } catch (e) {
+      print(e);
+    }
+    _authorized = isAuthenticated ? "Authorized" : "Not Authorized";
+    rebuildUi();
+  }
+
   bool _isError = false;
   bool get isError => _isError;
   void viewError() {
