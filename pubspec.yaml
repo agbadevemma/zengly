@@ -19,6 +19,7 @@ dependencies:
   path_provider: ^2.1.5
   local_auth: ^2.3.0
   intl_phone_field: ^3.2.0
+  toastification: ^2.3.0
 
 
 dev_dependencies:

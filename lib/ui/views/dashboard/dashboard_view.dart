@@ -13,7 +13,6 @@ class DashboardView extends StackedView<DashboardViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-    
       body: Container(
         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
       ),

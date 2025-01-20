@@ -15,6 +15,7 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
   ) {
     return Scaffold(
         body: SafeArea(
+      top: false,
       child: Stack(
         children: [
           Image.asset(

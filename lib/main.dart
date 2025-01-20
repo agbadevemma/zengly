@@ -31,8 +31,8 @@ class MainApp extends StatelessWidget {
           theme: ThemeData(
             primaryColor: const Color(0xff202020),
             colorScheme: ColorScheme.fromSwatch(
-              cardColor: Color(0xff202020),
-            ).copyWith(secondary: Colors.orange, primary: Colors.white),
+                    cardColor: Colors.white, accentColor: Colors.white)
+                .copyWith(secondary: Colors.orange, primary: Colors.white),
             elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xff282828),
@@ -47,7 +47,7 @@ class MainApp extends StatelessWidget {
               displayColor: Colors.white,
             ),
           ),
-          initialRoute: Routes.onboardingView ,
+          initialRoute: Routes.onboardingView,
           onGenerateRoute: StackedRouter().onGenerateRoute,
           navigatorKey: StackedService.navigatorKey,
           navigatorObservers: [

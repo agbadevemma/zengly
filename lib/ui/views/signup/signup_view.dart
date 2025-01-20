@@ -239,84 +239,79 @@ class SignupView extends StackedView<SignupViewModel> {
                               child: Row(
                                 children: [
                                   IntrinsicWidth(
-                                    
-                                    child: DropdownButtonFormField<
-                                        Map<String, String>>(
-                                      decoration: const InputDecoration(
-                                        border: InputBorder
-                                            .none, // Remove the bottom border
-                                        enabledBorder: InputBorder
-                                            .none, // Remove the enabled border
-                                        focusedBorder: InputBorder
-                                            .none, // Remove the focused border
-                                      ),
-                                      isExpanded: false,
-                                      value: viewModel.selectedCountry,
-                                      selectedItemBuilder:
-                                          (BuildContext context) {
-                                        return viewModel.countries
-                                            .map((country) {
-                                          // What appears in the dropdown button
-                                          return Row(
-                                            children: [
-                                              Text(
-                                                country['emoji']!,
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 12.sp),
-                                              ),
-                                              horizontalSpaceTiny,
-                                              Text(
-                                                country['dial_code']!,
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 12.sp),
-                                              ),
-                                            ],
-                                          );
-                                        }).toList();
-                                      },
-                                      onChanged:
-                                          (Map<String, String>? newCountry) {
-                                        viewModel.updateCountry(newCountry);
-                                      },
-                                      items: viewModel.countries.map((country) {
-                                        return DropdownMenuItem<
-                                            Map<String, String>>(
-                                          value: country,
-                                          child: ConstrainedBox(
-                                            constraints:
-                                                BoxConstraints(minWidth: 900),
-                                            child: Row(
+                                    stepWidth: 0.w,
+                                    child: DropdownButtonHideUnderline(
+                                      child:
+                                          DropdownButton<Map<String, String>>(
+                                        isExpanded: false,
+                                        menuWidth: 200.w,
+                                        value: viewModel.selectedCountry,
+                                        selectedItemBuilder:
+                                            (BuildContext context) {
+                                          return viewModel.countries
+                                              .map((country) {
+                                            // What appears in the dropdown button
+                                            return Row(
                                               children: [
                                                 Text(
-                                                  '${country['dial_code']}',
+                                                  country['emoji']!,
                                                   style: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 12.sp),
                                                 ),
                                                 horizontalSpaceTiny,
                                                 Text(
-                                                  '${country['emoji']}',
+                                                  country['dial_code']!,
                                                   style: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 12.sp),
                                                 ),
-                                                horizontalSpaceTiny,
-                                                Expanded(
-                                                  child: Text(
-                                                    ' ${country['name']} ',
+                                              ],
+                                            );
+                                          }).toList();
+                                        },
+                                        onChanged:
+                                            (Map<String, String>? newCountry) {
+                                          viewModel.updateCountry(newCountry);
+                                        },
+                                        items:
+                                            viewModel.countries.map((country) {
+                                          return DropdownMenuItem<
+                                              Map<String, String>>(
+                                            value: country,
+                                            child: ConstrainedBox(
+                                              constraints:
+                                                  BoxConstraints(minWidth: 100),
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    '${country['dial_code']}',
                                                     style: TextStyle(
                                                         color: Colors.white,
                                                         fontSize: 12.sp),
                                                   ),
-                                                ),
-                                                SizedBox(width: 8),
-                                              ],
+                                                  horizontalSpaceTiny,
+                                                  Text(
+                                                    '${country['emoji']}',
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 12.sp),
+                                                  ),
+                                                  horizontalSpaceTiny,
+                                                  Expanded(
+                                                    child: Text(
+                                                      ' ${country['name']} ',
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 12.sp),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                        );
-                                      }).toList(),
+                                          );
+                                        }).toList(),
+                                      ),
                                     ),
                                   ),
                                   Expanded(
@@ -440,7 +435,7 @@ class SignupView extends StackedView<SignupViewModel> {
                             Row(
                               children: [
                                 GestureDetector(
-                                  onTap:(){
+                                  onTap: () {
                                     viewModel.checkBox();
                                   },
                                   child: Container(
@@ -502,8 +497,7 @@ class SignupView extends StackedView<SignupViewModel> {
                             ),
                             verticalSpaceSmall,
                             ElevatedButton(
-                                onPressed: () {},
-                                // ignore: sort_child_properties_last
+                                onPressed: viewModel.navigateToSetPin,
                                 child: Text(
                                   "Open Account",
                                   style: TextStyle(
