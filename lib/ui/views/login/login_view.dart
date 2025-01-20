@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked/stacked.dart';
@@ -30,7 +31,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
             width: double.infinity,
             height: screenHeight(context),
             padding: const EdgeInsets.only(
-                left: 15.0, right: 15.0, top: 80, bottom: 14),
+                left: 15.0, right: 15.0, top: 50, bottom: 14),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,64 +40,135 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 20.h),
-                      GestureDetector(
-                        onTap: viewModel.routeBack,
-                        child: SvgPicture.asset(
-                          'images/icons/union.svg',
-                        ),
-                      ),
-                      SizedBox(height: 40.h),
-                      Row(children: [
-                        Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "Login\n",
-                                style: TextStyle(
-                                  fontSize: 22.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
-                                ),
+                      viewModel.userKnown
+                          ? SizedBox.shrink()
+                          : GestureDetector(
+                              onTap: viewModel.routeBack,
+                              child: SvgPicture.asset(
+                                'images/icons/union.svg',
                               ),
-                              TextSpan(
-                                text:
-                                    "Confirm your details to log into your account",
-                                style: TextStyle(
-                                  fontSize: 14.sp,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                          textAlign: TextAlign.start,
-                        ),
-                      ]),
-                      verticalSpaceMedium,
-                      Column(children: [
-                        Container(
-                          height: 70.h,
-                          padding: const EdgeInsets.only(left: 20, top: 8),
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                              color: const Color(0XFF1C1A1A),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8.r)),
-                              border: Border.all(
-                                  width: 1.dm, color: const Color(0XFF2E3336))),
-                          child: TextFormField(
-                            controller: emailController,
-                            autovalidateMode:
-                                AutovalidateMode.onUserInteraction,
-                            autofillHints: const [AutofillHints.email],
-                            decoration: const InputDecoration(
-                              labelText: 'Email address',
-                              labelStyle: TextStyle(color: Color(0XFF858585)),
-                              hintStyle: TextStyle(color: Color(0XFF858585)),
-                              border: InputBorder.none,
                             ),
-                            keyboardType: TextInputType.emailAddress,
-                          ),
-                        ),
+                      viewModel.userKnown
+                          ? SizedBox.shrink()
+                          : verticalSpace(30.h),
+                      viewModel.userKnown
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const CircleAvatar(
+                                      radius: 40.0, // Adjust size as needed
+                                      backgroundImage:
+                                          CachedNetworkImageProvider(
+                                        "https://www.catholicsingles.com/wp-content/uploads/2020/06/blog-header-3.png",
+                                      ),
+                                    ),
+                                    verticalSpace(10.h),
+                                    Text(
+                                      "Good evening,",
+                                      style: TextStyle(fontSize: 10.sp),
+                                    ),
+                                    verticalSpace(2.h),
+                                    Text(
+                                      "Ability Elijah",
+                                      style: TextStyle(
+                                          fontSize: 18.sp,
+                                          fontWeight: FontWeight.w600),
+                                    )
+                                  ],
+                                ),
+                                Text.rich(TextSpan(children: [
+                                  TextSpan(
+                                    text: "Not you?",
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0XFF858585),
+                                    ),
+                                  ),
+                                  const TextSpan(
+                                    text: " ", // Add a space here
+                                  ),
+                                  TextSpan(
+                                    text: "Change",
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ]))
+                              ],
+                            )
+                          : const SizedBox.shrink(),
+                      viewModel.userKnown
+                          ? SizedBox(height: 30.h)
+                          : SizedBox(height: 11.h),
+                      Row(children: [
+                        viewModel.userKnown
+                            ? const SizedBox.shrink()
+                            : Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: "Login\n",
+                                      style: TextStyle(
+                                        fontSize: 22.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          "Confirm your details to log into your account",
+                                      style: TextStyle(
+                                        fontSize: 14.sp,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                textAlign: TextAlign.start,
+                              ),
+                      ]),
+                      viewModel.userKnown
+                          ? SizedBox.shrink()
+                          : verticalSpaceMedium,
+                      Column(children: [
+                        viewModel.userKnown
+                            ? SizedBox.shrink()
+                            : Container(
+                                height: 70.h,
+                                padding:
+                                    const EdgeInsets.only(left: 20, top: 8),
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                    color: const Color(0XFF1C1A1A),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(8.r)),
+                                    border: Border.all(
+                                        width: 1.dm,
+                                        color: const Color(0XFF2E3336))),
+                                child: TextFormField(
+                                  controller: emailController,
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                  autofillHints: const [AutofillHints.email],
+                                  decoration: const InputDecoration(
+                                    labelText: 'Email address',
+                                    labelStyle:
+                                        TextStyle(color: Color(0XFF858585)),
+                                    hintStyle:
+                                        TextStyle(color: Color(0XFF858585)),
+                                    border: InputBorder.none,
+                                  ),
+                                  keyboardType: TextInputType.emailAddress,
+                                ),
+                              ),
                         if (viewModel.hasEmailValidationMessage &&
                             viewModel.isError) ...[
                           verticalSpaceTiny,
@@ -236,7 +308,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                         TextButton(
                             style: ButtonStyle(),
                             onPressed: viewModel.routeToSignup,
-                            child: Text("Open an account"))
+                            child: const Text("Open an account"))
                       ]),
                     ],
                   ),
@@ -245,7 +317,11 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                     children: [
                       TextButton(
                           onPressed: () {},
-                          child: Text("I forgot my password")),
+                          child: Text(
+                            "I forgot my password",
+                            style: TextStyle(
+                                fontSize: 12.sp, fontWeight: FontWeight.w500),
+                          )),
                       TextButton(
                           onPressed: () {},
                           child: Row(
@@ -254,7 +330,12 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                                 'images/icons/chat.svg',
                               ),
                               horizontalSpaceSmall,
-                              Text("Live Chat"),
+                              Text(
+                                "Live Chat",
+                                style: TextStyle(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w500),
+                              ),
                             ],
                           ))
                     ],

@@ -9,6 +9,7 @@ import 'package:zengly/ui/views/onboarding/onboarding_view.dart';
 import 'package:zengly/ui/views/welcome/welcome_view.dart';
 import 'package:zengly/ui/views/signup/signup_view.dart';
 import 'package:zengly/ui/views/dashboard/dashboard_view.dart';
+import 'package:zengly/ui/views/forgot_password/forgot_password_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -20,6 +21,7 @@ import 'package:zengly/ui/views/dashboard/dashboard_view.dart';
     MaterialRoute(page: WelcomeView),
     MaterialRoute(page: SignupView),
     MaterialRoute(page: DashboardView),
+    MaterialRoute(page: ForgotPasswordView),
 // @stacked-route
   ],
   dependencies: [

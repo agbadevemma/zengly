@@ -11,6 +11,7 @@ class LoginViewModel extends FormViewModel {
   final _navigationService = locator<NavigationService>();
   final _bottomSheetService = locator<BottomSheetService>();
   final LocalAuthentication _localAuth = LocalAuthentication();
+  final bool userKnown = false;
   String _authorized = "Not Authorized";
   String get authorized => _authorized;
 
@@ -25,6 +26,9 @@ class LoginViewModel extends FormViewModel {
         ),
       );
       print(isAuthenticated);
+      if (isAuthenticated) {
+        _navigationService.navigateToDashboardView();
+      }
     } catch (e) {
       print(e);
     }
@@ -48,7 +52,7 @@ class LoginViewModel extends FormViewModel {
   }
 
   void routeToDashboard() {
-    _navigationService.navigateToSignupView();
+    _navigationService.navigateToDashboardView();
   }
 
   bool _isPasswordVisible = false;

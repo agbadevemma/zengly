@@ -75,7 +75,6 @@ class NoticeSheet extends StackedView<NoticeSheetModel> {
           verticalSpace(20.h),
           ElevatedButton(
               onPressed: () {
-    
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
