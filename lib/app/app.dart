@@ -13,6 +13,7 @@ import 'package:zengly/ui/views/forgot_password/forgot_password_view.dart';
 import 'package:zengly/ui/views/setpin/setpin_view.dart';
 import 'package:zengly/ui/views/confirmpin/confirmpin_view.dart';
 import 'package:zengly/ui/views/signupsuccess/signupsuccess_view.dart';
+import 'package:zengly/ui/views/signupotp/signupotp_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -28,6 +29,7 @@ import 'package:zengly/ui/views/signupsuccess/signupsuccess_view.dart';
     MaterialRoute(page: SetpinView),
     MaterialRoute(page: ConfirmpinView),
     MaterialRoute(page: SignupsuccessView),
+    MaterialRoute(page: SignupotpView),
 // @stacked-route
   ],
   dependencies: [
