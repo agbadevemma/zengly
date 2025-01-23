@@ -17,18 +17,28 @@ class SignupsuccessView extends StackedView<SignupsuccessViewModel> {
   ) {
     return Scaffold(
       body: Container(
-        padding:
-            const EdgeInsets.only(left: 15.0, right: 15.0, top: 130, bottom: 14),
+        padding: const EdgeInsets.only(
+            left: 15.0, right: 15.0, top: 150, bottom: 14),
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
-              child: Image.asset(
-                'images/success.gif',
-                width: 240.w,
+              child: Container(
+                height: 150.h,
+                width: 150.w,
+                decoration: BoxDecoration(
+              
+                 border: Border.all(color: Colors.white),
+                  shape: BoxShape.circle
+                ),
+                child: Image.asset(
+                  'images/success.gif',
+                  width: 240.w,
+                ),
               ),
             ),
+            verticalSpaceMedium,
             Text(
               "Voila! ",
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24.sp),
@@ -44,7 +54,7 @@ class SignupsuccessView extends StackedView<SignupsuccessViewModel> {
             ),
             verticalSpace(60.h),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: viewModel.routeToLogin,
                 // ignore: sort_child_properties_last
                 child: Text(
                   "Login",

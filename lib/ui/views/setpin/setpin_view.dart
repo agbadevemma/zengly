@@ -9,6 +9,7 @@ import 'package:zengly/app/app.locator.dart';
 import 'package:zengly/ui/common/ui_helpers.dart';
 import 'setpin_viewmodel.dart';
 import 'package:toastification/toastification.dart';
+import 'package:vibration/vibration.dart';
 
 class SetpinView extends StackedView<SetpinViewModel> {
   const SetpinView({Key? key}) : super(key: key);
@@ -112,7 +113,10 @@ class SetpinView extends StackedView<SetpinViewModel> {
                   }
 
                   return GestureDetector(
-                    onTap: () {
+                    onTap: () async {
+                      //  if (await Vibration.hasVibrator()) {
+                      //   Vibration.vibrate();  // Vibrate on tap
+                      // }
                       if (index == 9) {
                         viewModel.onDeletePressed();
                       } else if (index == 11) {

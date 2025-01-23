@@ -42,7 +42,7 @@ class SignupViewModel extends BaseViewModel implements Initialisable {
   }
 
   void navigateToSetPin() {
-    _navigationService.navigateToSetpinView();
+    _navigationService.navigateToSignupotpView();
   }
 
   void checkBox() {

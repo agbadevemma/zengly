@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zengly/ui/common/ui_helpers.dart';
-
+import 'package:vibration/vibration.dart';
 import 'confirmpin_viewmodel.dart';
 
 class ConfirmpinView extends StackedView<ConfirmpinViewModel> {
@@ -16,7 +16,6 @@ class ConfirmpinView extends StackedView<ConfirmpinViewModel> {
     ConfirmpinViewModel viewModel,
     Widget? child,
   ) {
-
     return Scaffold(
       body: Container(
         padding:
@@ -110,7 +109,10 @@ class ConfirmpinView extends StackedView<ConfirmpinViewModel> {
                   }
 
                   return GestureDetector(
-                    onTap: () {
+                    onTap: () async {
+                      //   if (await Vibration.hasVibrator()) {
+                      //   Vibration.vibrate();  // Vibrate on tap
+                      // }
                       if (index == 9) {
                         viewModel.onDeletePressed();
                       } else if (index == 11) {

@@ -498,11 +498,11 @@ class SignupView extends StackedView<SignupViewModel> {
                             verticalSpaceSmall,
                             ElevatedButton(
                                 onPressed: viewModel.navigateToSetPin,
-                                child: Text(
+                                child: const Text(
                                   "Open Account",
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 14.5.sp,
+                                      fontSize: 14.5,
                                       fontWeight: FontWeight.w600),
                                   textAlign: TextAlign.center,
                                 ),

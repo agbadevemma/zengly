@@ -5,17 +5,25 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i14;
+import 'package:flutter/material.dart' as _i18;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i15;
+import 'package:stacked_services/stacked_services.dart' as _i19;
 import 'package:zengly/ui/views/confirmpin/confirmpin_view.dart' as _i11;
+import 'package:zengly/ui/views/create_new_password/create_new_password_view.dart'
+    as _i16;
 import 'package:zengly/ui/views/dashboard/dashboard_view.dart' as _i8;
 import 'package:zengly/ui/views/forgot_password/forgot_password_view.dart'
     as _i9;
 import 'package:zengly/ui/views/home/home_view.dart' as _i2;
 import 'package:zengly/ui/views/login/login_view.dart' as _i4;
+import 'package:zengly/ui/views/newpasswordsuccess/newpasswordsuccess_view.dart'
+    as _i17;
 import 'package:zengly/ui/views/onboarding/onboarding_view.dart' as _i5;
+import 'package:zengly/ui/views/retrievepassword/retrievepassword_view.dart'
+    as _i14;
+import 'package:zengly/ui/views/retrievepasswordotp/retrievepasswordotp_view.dart'
+    as _i15;
 import 'package:zengly/ui/views/setpin/setpin_view.dart' as _i10;
 import 'package:zengly/ui/views/signup/signup_view.dart' as _i7;
 import 'package:zengly/ui/views/signupotp/signupotp_view.dart' as _i13;
@@ -48,6 +56,14 @@ class Routes {
 
   static const signupotpView = '/signupotp-view';
 
+  static const retrievepasswordView = '/retrievepassword-view';
+
+  static const retrievepasswordotpView = '/retrievepasswordotp-view';
+
+  static const createNewPasswordView = '/create-new-password-view';
+
+  static const newpasswordsuccessView = '/newpasswordsuccess-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -61,6 +77,10 @@ class Routes {
     confirmpinView,
     signupsuccessView,
     signupotpView,
+    retrievepasswordView,
+    retrievepasswordotpView,
+    createNewPasswordView,
+    newpasswordsuccessView,
   };
 }
 
@@ -114,78 +134,118 @@ class StackedRouter extends _i1.RouterBase {
       Routes.signupotpView,
       page: _i13.SignupotpView,
     ),
+    _i1.RouteDef(
+      Routes.retrievepasswordView,
+      page: _i14.RetrievepasswordView,
+    ),
+    _i1.RouteDef(
+      Routes.retrievepasswordotpView,
+      page: _i15.RetrievepasswordotpView,
+    ),
+    _i1.RouteDef(
+      Routes.createNewPasswordView,
+      page: _i16.CreateNewPasswordView,
+    ),
+    _i1.RouteDef(
+      Routes.newpasswordsuccessView,
+      page: _i17.NewpasswordsuccessView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.LoginView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.LoginView(),
         settings: data,
       );
     },
     _i5.OnboardingView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.OnboardingView(),
         settings: data,
       );
     },
     _i6.WelcomeView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.WelcomeView(),
         settings: data,
       );
     },
     _i7.SignupView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.SignupView(),
         settings: data,
       );
     },
     _i8.DashboardView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.DashboardView(),
         settings: data,
       );
     },
     _i9.ForgotPasswordView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.ForgotPasswordView(),
         settings: data,
       );
     },
     _i10.SetpinView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.SetpinView(),
         settings: data,
       );
     },
     _i11.ConfirmpinView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.ConfirmpinView(),
         settings: data,
       );
     },
     _i12.SignupsuccessView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.SignupsuccessView(),
         settings: data,
       );
     },
     _i13.SignupotpView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.SignupotpView(),
+        settings: data,
+      );
+    },
+    _i14.RetrievepasswordView: (data) {
+      return _i18.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i14.RetrievepasswordView(),
+        settings: data,
+      );
+    },
+    _i15.RetrievepasswordotpView: (data) {
+      return _i18.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i15.RetrievepasswordotpView(),
+        settings: data,
+      );
+    },
+    _i16.CreateNewPasswordView: (data) {
+      return _i18.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i16.CreateNewPasswordView(),
+        settings: data,
+      );
+    },
+    _i17.NewpasswordsuccessView: (data) {
+      return _i18.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i17.NewpasswordsuccessView(),
         settings: data,
       );
     },
@@ -198,7 +258,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i15.NavigationService {
+extension NavigatorStateExtension on _i19.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -367,6 +427,62 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToRetrievepasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.retrievepasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToRetrievepasswordotpView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.retrievepasswordotpView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToCreateNewPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.createNewPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToNewpasswordsuccessView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.newpasswordsuccessView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -529,6 +645,62 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.signupotpView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithRetrievepasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.retrievepasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithRetrievepasswordotpView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.retrievepasswordotpView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithCreateNewPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.createNewPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithNewpasswordsuccessView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.newpasswordsuccessView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

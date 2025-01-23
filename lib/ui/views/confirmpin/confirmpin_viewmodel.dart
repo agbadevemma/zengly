@@ -36,23 +36,21 @@ class ConfirmpinViewModel extends BaseViewModel {
       return;
     }
     if (enteredPin != args) {
-        print('args ${args}');
+      print('args ${args}');
       toastification.show(
         type: ToastificationType.error,
         style: ToastificationStyle.fillColored,
-        description: RichText(
-            text: const TextSpan(text: 'PIN mistach')),
+        description: RichText(text: const TextSpan(text: 'PIN mistach')),
         showProgressBar: false,
         context: context,
         title: Text('An error occured'),
         alignment: Alignment.topCenter,
         autoCloseDuration: const Duration(seconds: 4),
       );
-      
-       return;
+
+      return;
     }
     _navigationService.navigateToSignupsuccessView();
-  
   }
 
   void onNumberPressed(String number, BuildContext context) {

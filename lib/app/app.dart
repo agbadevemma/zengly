@@ -15,6 +15,10 @@ import 'package:zengly/ui/views/confirmpin/confirmpin_view.dart';
 import 'package:zengly/ui/views/signupsuccess/signupsuccess_view.dart';
 import 'package:zengly/ui/views/signupotp/signupotp_view.dart';
 import 'package:zengly/services/setpin_view_model_service.dart';
+import 'package:zengly/ui/views/retrievepassword/retrievepassword_view.dart';
+import 'package:zengly/ui/views/retrievepasswordotp/retrievepasswordotp_view.dart';
+import 'package:zengly/ui/views/create_new_password/create_new_password_view.dart';
+import 'package:zengly/ui/views/newpasswordsuccess/newpasswordsuccess_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -31,6 +35,10 @@ import 'package:zengly/services/setpin_view_model_service.dart';
     MaterialRoute(page: ConfirmpinView),
     MaterialRoute(page: SignupsuccessView),
     MaterialRoute(page: SignupotpView),
+    MaterialRoute(page: RetrievepasswordView),
+    MaterialRoute(page: RetrievepasswordotpView),
+    MaterialRoute(page: CreateNewPasswordView),
+    MaterialRoute(page: NewpasswordsuccessView),
 // @stacked-route
   ],
   dependencies: [
