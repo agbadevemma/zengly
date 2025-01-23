@@ -14,6 +14,7 @@ import 'package:zengly/ui/views/setpin/setpin_view.dart';
 import 'package:zengly/ui/views/confirmpin/confirmpin_view.dart';
 import 'package:zengly/ui/views/signupsuccess/signupsuccess_view.dart';
 import 'package:zengly/ui/views/signupotp/signupotp_view.dart';
+import 'package:zengly/services/setpin_view_model_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -36,7 +37,8 @@ import 'package:zengly/ui/views/signupotp/signupotp_view.dart';
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
-    // @stacked-service
+    LazySingleton(classType: SetpinViewModelService),
+// @stacked-service
   ],
   bottomsheets: [
     StackedBottomsheet(classType: NoticeSheet),

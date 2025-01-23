@@ -16,6 +16,7 @@ class ConfirmpinView extends StackedView<ConfirmpinViewModel> {
     ConfirmpinViewModel viewModel,
     Widget? child,
   ) {
+
     return Scaffold(
       body: Container(
         padding:
@@ -113,7 +114,7 @@ class ConfirmpinView extends StackedView<ConfirmpinViewModel> {
                       if (index == 9) {
                         viewModel.onDeletePressed();
                       } else if (index == 11) {
-                        viewModel.routeToConfirm();
+                        viewModel.routeToConfirm(context);
                       } else if (buttonText.isNotEmpty) {
                         viewModel.onNumberPressed(buttonText, context);
                       }

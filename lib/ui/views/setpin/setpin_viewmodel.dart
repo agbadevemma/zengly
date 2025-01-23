@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:zengly/app/app.locator.dart';
 import 'package:zengly/app/app.router.dart';
+import 'package:zengly/ui/views/confirmpin/confirmpin_view.dart';
 
 class SetpinViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
@@ -14,7 +15,7 @@ class SetpinViewModel extends BaseViewModel {
   }
 
   void routeToConfirm() {
-    _navigationService.navigateToConfirmpinView();
+    _navigationService.navigateTo(Routes.confirmpinView, arguments: enteredPin);
   }
 
   void onNumberPressed(String number) {
